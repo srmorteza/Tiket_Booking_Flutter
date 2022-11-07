@@ -14,19 +14,19 @@ class TicketView extends StatelessWidget {
     final size = Applayout.getSize(context);
     return SizedBox(
       width: size.width*0.85,
-      height: 200,
+      height: Applayout.getHeight(200),
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(right: Applayout.getHeight(16)),
         child: Column(
           children: [
             Container(
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 color: Color(0xff526799),
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(21),
-                    topRight: Radius.circular(21)),
+                    topLeft: Radius.circular(Applayout.getHeight(21)),
+                    topRight: Radius.circular(Applayout.getHeight(21))),
               ),
-              padding: const EdgeInsets.all(16),
+              padding:  EdgeInsets.all(Applayout.getHeight(16)),
               child: Column(
                 children: [
                   Row(
@@ -41,7 +41,7 @@ class TicketView extends StatelessWidget {
                       Expanded(
                           child: Stack(
                             children: [SizedBox(
-                                height: 24,
+                                height: Applayout.getHeight(24),
                                 child: LayoutBuilder(
                                   builder: (BuildContext context,
                                       BoxConstraints constraints) {
@@ -83,14 +83,14 @@ class TicketView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       SizedBox(
-                        width: 100,
+                        width: Applayout.getWidht(100),
                         child: Text(ticket['from']['name'], style: Styles.headLineStyle4.copyWith(color: Colors.white),),
                       ),
                       Text(ticket['flying_time'],style: Styles.headLineStyle4.copyWith(color: Colors.white),),
 
                       SizedBox(
 
-                        width: 100,
+                        width: Applayout.getWidht(100),
                         child: Text(ticket['to']['name'], style: Styles.headLineStyle4.copyWith(color: Colors.white),
                         ),
                       ),
@@ -105,8 +105,8 @@ class TicketView extends StatelessWidget {
                 children:  [
                   SizedBox(
 
-                    height: 20,
-                    width: 10,
+                    height: Applayout.getHeight(20),
+                    width: Applayout.getWidht(10),
                     child: DecoratedBox(
                         decoration: BoxDecoration(
                           color: Colors.white,

@@ -15,7 +15,7 @@ class HotelScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
       margin: const EdgeInsets.only(right: 17, top: 5),
       width: size.width *0.6 ,
-      height: 350,
+      height: Applayout.getHeight(350),
       decoration: BoxDecoration(
         color: Styles.primeryColor,
         borderRadius: BorderRadius.circular(24),
@@ -31,7 +31,7 @@ class HotelScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 180,
+            height: Applayout.getHeight(180),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Styles.primeryColor,
