@@ -1,8 +1,6 @@
 import 'package:booktickets/utils/app_styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 import '../utils/app_layout.dart';
 
 
@@ -24,6 +22,11 @@ class SearchScreen extends StatelessWidget {
           Gap(Applayout.getHeight(20)),
           Container(
             padding: const EdgeInsets.all(3.5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Applayout.getHeight(50)),
+              color: const Color(0xfff4f6fd),
+
+            ),
             child: Row(
               children: [
                 Container(
@@ -34,7 +37,7 @@ class SearchScreen extends StatelessWidget {
                     color:  Colors.white,
                   ),
                   child:
-                  Center(child: Text("ariline tickets")),
+                  const Center(child: Text("Airline tickets")),
 
                 ),
                FittedBox(
@@ -46,16 +49,11 @@ class SearchScreen extends StatelessWidget {
                      color:  Colors.transparent,
                    ),
                    child:
-                   Center(child: Text("Hotels")),
+                   const Center(child: Text("Hotels")),
 
                  ),
                )
               ],
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Applayout.getHeight(50)),
-              color: const Color(0xfff4f6fd),
-
             ),
           )
 
