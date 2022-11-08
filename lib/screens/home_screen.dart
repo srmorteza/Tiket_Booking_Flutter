@@ -4,9 +4,11 @@ import 'package:booktickets/utils/app_info_list.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 
 import '../utils/app_styles.dart';
+import '../widgets/double_text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -63,17 +65,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Upcomming Flights", style: Styles.headLineStyle2,),
-                    InkWell(
-                        onTap: (){
-                          print("you ar taped");
-                        },
-                      child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primeryColor),)),
-                  ],
-                )
+                const AppDoubleTextWidget(bigtext: "Upcomming Flights", smalltext: "View all",),
                     
               ],
             ),
@@ -89,17 +81,9 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hotels", style: Styles.headLineStyle2,),
-                InkWell(
-                    onTap: (){
-                      print("you ar taped");
-                    },
-                    child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primeryColor),)),
-              ],
-            ),
+            child:
+            const AppDoubleTextWidget(bigtext: "Hotels", smalltext: "View all",),
+
           ),
           const Gap(15),
 
