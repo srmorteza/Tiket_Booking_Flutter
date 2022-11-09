@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../utils/app_layout.dart';
 import '../widgets/double_text_widget.dart';
+import '../widgets/ticket_tabs.dart';
 
 
 
@@ -22,42 +23,7 @@ class SearchScreen extends StatelessWidget {
           Gap(Applayout.getHeight(40)),
           Text("What are\nyou looking for? ", style: Styles.headLineStyle1.copyWith(fontSize:  Applayout.getWidht(35)),),
           Gap(Applayout.getHeight(20)),
-          Container(
-            padding: const EdgeInsets.all(3.5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Applayout.getHeight(50)),
-              color: const Color(0xfff4f6fd),
-
-            ),
-            child: Row(
-              children: [
-                Container(
-                  width: size.width*0.44,
-                  padding: EdgeInsets.symmetric(vertical: Applayout.getHeight(7)),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.horizontal(left: Radius.circular(Applayout.getHeight(50))),
-                    color:  Colors.white,
-                  ),
-                  child:
-                  const Center(child: Text("Airline tickets")),
-
-                ),
-               FittedBox(
-                 child:  Container(
-                   width: size.width*0.44,
-                   padding: EdgeInsets.symmetric(vertical: Applayout.getHeight(7)),
-                   decoration: BoxDecoration(
-                     borderRadius: BorderRadius.horizontal(right: Radius.circular(Applayout.getHeight(50))),
-                     color:  Colors.transparent,
-                   ),
-                   child:
-                   const Center(child: Text("Hotels")),
-
-                 ),
-               )
-              ],
-            ),
-          ),
+          const AppTicketTabs( firsttab: "Airline Tickets", secondtab: "Hotels",),
           Gap(Applayout.getHeight(25)),
           const AppIconText(icon: Icons.flight_takeoff_rounded, text: "Departure"),
           Gap(Applayout.getHeight(15)),
@@ -101,7 +67,7 @@ class SearchScreen extends StatelessWidget {
                       height:Applayout.getHeight(100) ,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(Applayout.getHeight(12) ,),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage(
                         "assets/images/sit.jpg"
                           )
