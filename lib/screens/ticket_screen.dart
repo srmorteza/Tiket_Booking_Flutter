@@ -1,6 +1,7 @@
 import 'package:booktickets/screens/ticket_view.dart';
 import 'package:booktickets/utils/app_info_list.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/layout_builder_widget.dart';
 import 'package:booktickets/widgets/ticket_tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,10 @@ import 'package:gap/gap.dart';
 
 import '../utils/app_layout.dart';
 import '../widgets/column_layout.dart';
+import 'package:barcode_widget/barcode_widget.dart';
+
+
+
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({Key? key}) : super(key: key);
@@ -46,10 +51,77 @@ class TicketScreen extends StatelessWidget {
 
 
                   ],
-                )
+                ),
+                Gap(Applayout.getHeight(20)),
+                const AppLayoutBuilderWidget(sections: 15,isColor: false,width: 5,),
+                Gap(Applayout.getHeight(20)),
+                Row(
+                  mainAxisAlignment:  MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnLayout(firstText: "0055 52525 744554",secondText: "number of E-ticket",alignment: CrossAxisAlignment.start,isColor:false),
+                    AppColumnLayout(firstText: "b2sg28",secondText: "booking code",alignment: CrossAxisAlignment.end,isColor:false),
+
+
+                  ],
+                ),
+                const AppLayoutBuilderWidget(sections: 15,isColor: false,width: 5,),
+                Gap(Applayout.getHeight(20)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.asset("assets/images/visa.png", scale: 11,),
+                            Text("00085852",style: Styles.headLineStyle3,),
+                          ],
+                        ),
+                        Gap(5),
+                        Text("payment method", style: Styles.headLineStyle4,),
+                      ],
+                    ),
+                    const AppColumnLayout(firstText: "\$249.99",secondText: "price",alignment: CrossAxisAlignment.end,isColor:false),
+
+                  ],
+                ),
+
+
               ],
             ),
-          )
+          ),
+          SizedBox(height: 1,),
+
+          Container(
+
+            margin: EdgeInsets.only(left: Applayout.getHeight(15),right: Applayout.getHeight(15)),
+            padding: EdgeInsets.only(top: Applayout.getHeight(15),bottom: Applayout.getHeight(15)),
+            decoration: BoxDecoration(
+                color: Colors.white,
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(Applayout.getHeight(21)), bottomRight: Radius.circular(21),)
+            ),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: Applayout.getHeight(15)),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(Applayout.getHeight(15)),
+                child: BarcodeWidget(barcode: Barcode.code128(),
+                  data: 'https://github.com/srmorteza',
+                  drawText: false,
+                  color: Styles.textColor,
+                  width: double.infinity,
+                  height: 70,
+
+                ),
+              ),
+            ),
+          ),
+          Gap(Applayout.getHeight(25)),
+          Container(
+            padding: EdgeInsets.only(left:Applayout.getHeight(16) ),
+            child: TicketView(ticket: ticketList[0]),
+          ),
+
           
         ],
         )
