@@ -1,4 +1,5 @@
 import 'package:booktickets/screens/home_screen.dart';
+import 'package:booktickets/screens/profile_screen.dart';
 import 'package:booktickets/screens/search_screen.dart';
 import 'package:booktickets/screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -17,10 +18,10 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectedindex =0;
   static final List<Widget>_widgetoptions=<Widget>[
-    HomeScreen(),
-    SearchScreen(),
-    TicketScreen(),
-    const Text("profile"),
+    const HomeScreen(),
+    const SearchScreen(),
+    const TicketScreen(),
+    const ProfileScreen(),
 
   ];
   void _onItemTapped(int index){
